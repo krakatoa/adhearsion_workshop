@@ -1,0 +1,7 @@
+<extension name="demo">
+  <condition>
+    <action application="set" data="hangup_after_bridge=false"/>
+    <action application="set" data="park_after_bridge=true"/>
+    <action application="rayo"/>
+  </condition>
+</extension>

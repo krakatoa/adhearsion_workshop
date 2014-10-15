@@ -1,0 +1,36 @@
+<!--= @file = File.join(@ivr_root, "config", "s3.yml") -->
+<!--= S3_CONFIG = YAML.load_file(@file)['development'] -->
+<configuration name="http_cache.conf" description="HTTP GET cache">
+  <settings>
+    <!-- set to true if you want to enable http:// and https:// formats.  Do not use if mod_httapi is also loaded -->
+    <param name="enable-file-formats" value="true"/>
+    <param name="max-urls" value="10000"/>
+    <param name="location" value="/var/lib/freeswitch/storage/http_cache"/>
+    <param name="default-max-age" value="86400"/>
+    <!--
+    <param name="prefetch-thread-count" value="8"/>
+    <param name="prefetch-queue-size" value="100"/>
+    -->
+    <param name="ssl-cacert" value="<%= @freeswitch_conf_path %>/cacert.pem"/>
+    <param name="ssl-verifyhost" value="true"/>
+    <param name="ssl-verifypeer" value="true"/>
+  </settings>
+  <profiles>
+    <profile name="s3">
+      <!-- Credentials for AWS account. -->
+      <aws-s3>
+        <!-- 20 character key identifier -->
+        <!--<access-key-id><![CDATA[= S3_CONFIG['access_key_id']]]></access-key-id>-->
+        <access-key-id><![CDATA[]]></access-key-id>
+        <!-- 40 character secret -->
+        <!--<secret-access-key><![CDATA[= S3_CONFIG['secret_access_key']]]></secret-access-key>-->
+        <secret-access-key><![CDATA[]]></secret-access-key>
+      </aws-s3>
+      <!-- Domains that this profile applies to -->
+      <domains>
+        <!--<domain name="=# S3_CONFIG['bucket'] .s3.amazonaws.com" />-->
+        <domain name="s3.amazonaws.com" />
+      </domains>
+    </profile>
+  </profiles>
+</configuration>
