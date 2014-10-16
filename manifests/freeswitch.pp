@@ -9,8 +9,8 @@ define freeswitch::install() {
   }
 
   apt::source { 'freeswitch':
-    location => "http://files.freeswitch.org/repo/deb/debian/",
-    # location => "http://192.168.1.108/",
+    # location => "http://files.freeswitch.org/repo/deb/debian/",
+    location => "http://192.168.1.115/",
     release => "wheezy",
     repos => "main",
     include_src => false

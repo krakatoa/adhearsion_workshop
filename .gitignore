@@ -1,2 +1,4 @@
 talk*
-log/*.log
+/log/*.log
+.vagrant
+accounts.db

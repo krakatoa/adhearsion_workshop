@@ -3,6 +3,7 @@ source "https://rubygems.org"
 
 gem "adhearsion"
 gem "adhearsion-asr"
-# gem "rails"
+gem "sequel"
+gem "sqlite3"
 
 gem "rspec"

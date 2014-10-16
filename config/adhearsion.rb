@@ -26,8 +26,7 @@ Adhearsion.config do |config|
   #
   config.punchblock.username = "fercho@adhearsion-demo.com" # Your XMPP JID for use with Rayo
   config.punchblock.password = "1234" # Your XMPP password
-  config.punchblock.host = "192.168.1.113"
-  config.punchblock.media_engine = :flite
+  config.punchblock.host = "192.168.1.118"
 
   ##
   # Use with Asterisk
