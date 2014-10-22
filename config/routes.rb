@@ -1,10 +1,11 @@
 # encoding: utf-8
 
-require 'call_controllers/simon_game'
+require 'call_controllers/main_controller'
+require 'call_controllers/account_menu_controller'
 
 Adhearsion.router do
 
   # Specify your call routes, directing calls with particular attributes to a controller
 
-  route 'default', RubyConf
+  route 'default', MainController
 end

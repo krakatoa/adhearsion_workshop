@@ -16,7 +16,7 @@ define freeswitch::install() {
     include_src => false
   }
 
-  [ "freeswitch-meta-vanilla", "freeswitch-mod-rayo" ].each |$p| {
+  [ "freeswitch-meta-vanilla", "freeswitch-mod-rayo", "freeswitch-mod-flite" ].each |$p| {
     package { $p:
       ensure => latest,
       require => [Apt::Source['freeswitch']]

@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/debian-73-x64-virtualbox-puppet.box"
 
   config.ssh.forward_agent = true
-  config.vm.host_name = "fs.adhearsion-demo.com"
+  config.vm.host_name = "fs.ahn-demo.com"
   config.vm.synced_folder "manifests/templates", "/tmp/vagrant-puppet-1/templates"
 
   config.vm.network :public_network
