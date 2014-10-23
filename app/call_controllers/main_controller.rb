@@ -29,12 +29,19 @@ class MainController < Adhearsion::CallController
       end
 
       match 2 do
-        dial "user/1000"
+        status = dial "user/1000", :for => 20
+        
+        case status.result
+          when :answer
+            bye
+          when :error, :timeout
+            say 'All of our agents are currently busy, please try again later.'
+        end
       end
 
       match 3 do
         say 'Please, leave a message after the beep.'
-        result = record timeout: 30
+        result = record max_duration: 30
         puts "Recorded file: #{result.recording_uri}"
       end
 

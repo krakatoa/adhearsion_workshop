@@ -136,8 +136,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  adhearsion
+  adhearsion (~> 2.5)
   adhearsion-asr
+  punchblock (~> 2.5)
   rspec
   sequel
   sqlite3

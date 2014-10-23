@@ -1,4 +1,7 @@
 <extension name="demo">
+  <condition field="destination_number" expression="^1000$" break="on-true">
+    <action application="transfer" data="1000 XML default"/>
+  </condition>
   <condition>
     <action application="set" data="hangup_after_bridge=false"/>
     <action application="set" data="park_after_bridge=true"/>
